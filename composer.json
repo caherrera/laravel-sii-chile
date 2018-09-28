@@ -1,0 +1,58 @@
+{
+    "name": "caherrera/lavsii",
+    "description": "SII Chile Service Provider for Laravel",
+    "keywords": [
+        "sii",
+        "chile",
+        "laravel"
+    ],
+    "homepage": "https://github.com/caherrera/laravel-sii-chile",
+    "support": {
+        "issues": "https://github.com/caherrera/laravel-sii-chile/issues",
+        "source": "https://github.com/caherrera/laravel-sii-chile"
+    },
+    "license": "AGPL-3.0+",
+    "authors": [
+        {
+            "name": "Carlos Herrera",
+            "email": "carlos@itline.cl",
+            "homepage": "https://itline.cl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": "5.5.* || 5.6.* || 5.7.*",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8 || ~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Caherrera\\Lavsii\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Caherrera\\Lavsii\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+
+            },
+            "providers": [
+                "Caherrera\\Lavsii\\Providers\\LaravelServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "test:ci": "composer test -- --verbose --coverage-text --coverage-clover=coverage.xml"
+    }
+}
