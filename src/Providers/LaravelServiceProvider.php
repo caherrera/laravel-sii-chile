@@ -6,10 +6,11 @@
  * Time: 1:29 PM
  */
 
-namespace Caherrera\Lavsii;
+namespace Caherrera\Lavsii\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
+use sasco\LibreDTE\Sii;
 
 class LaravelServiceProvider extends ServiceProvider {
 
@@ -20,7 +21,9 @@ class LaravelServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-
+		$this->app->bind('App\Services\LavSiiService', function ($app) {
+			return new Sii(env('MS_FACE_API_KEY1'));
+		});
 	}
 
 
